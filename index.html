@@ -17,6 +17,14 @@
 </head>
 <body>
 <script type="text/javascript">
+ if (window.DiscordSDK) {
+    const discordSdk = new DiscordSDK("1414545358884835369");
+    discordSdk.ready().then(() => {
+      console.log("Discord ready!");
+    }).catch(err => console.error("Discord SDK failed:", err));
+  } else {
+    console.log("DiscordSDK not injected yet");
+  }
 function getFlashVersion() {
             try {
                 var version;
